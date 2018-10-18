@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Students</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include templates/header.ejs %>
+    <h1>Students</h1>
+    <p>Welcome to Students</p>
+
+    <% for(var student in studenlist) { %>
+        <div>
+            <%= student %>
+            <%= studenlist[student].nombre %>
+        </div>
+    <% } %>
+
+  </body>
+</html>

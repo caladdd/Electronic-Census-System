@@ -12,6 +12,8 @@
     "cookie-parser": "~1.0.1",
     "body-parser": "~1.0.0",
     "debug": ">=2.6.9",
-    "ejs": ">=2.5.5"
+    "ejs": ">=2.5.5",
+    "kerberos" : "~0.0.17",
+    "mongodb" : "~2.0.33"
   }
 }

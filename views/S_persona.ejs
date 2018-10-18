@@ -10,14 +10,18 @@
     <p>Welcome to <%= form %></p>
 
 
-    <form action="/" method="post">
+    <form name="addStudent" action="/S_persona/addStudent" method="post">
 
     <% for(var exKey in campos.persona) { %>
       <div>
         <label for=<%= campos.persona[exKey] %>><%= campos.persona[exKey] %> :</label>
-        <input type="text" id=<%= campos.persona[exKey] %> />
+        <input type="text" id=<%= campos.persona[exKey] %> name=<%= campos.persona[exKey] %> />
       </div>
     <% } %>
+
+    <div class="button">
+        <button type="submit">Send your message</button>
+    </div>
 
     </form> 
 

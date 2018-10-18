@@ -4,6 +4,10 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+//mongo
+var mongo = require('mongodb');
+
+//routes
 var routes = require('./routes/index');
 var S_persona = require('./routes/S_persona');
 var S_vivienda = require('./routes/S_vivienda');
