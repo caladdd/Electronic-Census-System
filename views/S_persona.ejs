@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= form %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include templates/header.ejs %>
+    <h1><%= form %></h1>
+    <p>Welcome to <%= form %></p>
+
+
+    <form action="/" method="post">
+
+    <% for(var exKey in campos.persona) { %>
+      <div>
+        <label for=<%= campos.persona[exKey] %>><%= campos.persona[exKey] %> :</label>
+        <input type="text" id=<%= campos.persona[exKey] %> />
+      </div>
+    <% } %>
+
+    </form> 
+
+  </body>
+</html>

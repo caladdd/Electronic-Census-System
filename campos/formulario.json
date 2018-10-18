@@ -1,0 +1,12 @@
+{
+    "persona" : {
+        "nombre" : "Nombre",
+        "edad" : "Edad",
+        "ciudad" : "Ciudad",
+        "celular" : "Celular"
+    },
+    "vivienda" : {
+        "direccion" : "calle ###",
+        "ciudad" : "sabaneta"
+    }
+}
