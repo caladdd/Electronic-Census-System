@@ -1,9 +1,15 @@
 {
     "persona" : {
         "nombre" : "Nombre",
-        "edad" : "Edad",
-        "ciudad" : "Ciudad",
-        "celular" : "Celular"
+        "apellido" : "Apellido",
+        "genero" : "Genero",
+        "fecha" : "Fecha de Nacimiento",
+        "nivel" : "Nivel Educativo",
+        "estado" : "Estado Civil",
+        "ocupacion" : "Ocupación",
+        "etnia" : "Etnia",
+        "religion" : "Religión",
+        "trabajo" : "Horas de trabajo a la semana"
     },
     "vivienda" : {
         "direccion" : "calle ###",

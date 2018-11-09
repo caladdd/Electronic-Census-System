@@ -46,13 +46,13 @@ router.post('/addStudent', function(req, res){
 
       var collection = db.collection('students');
 
-      var student = { nombre: req.body.Nombre, edad: req.body.Edad, 
-        ciudad: req.body.Ciudad, celular: req.body.Celular };
+      var student = { nombre: req.body.Nombre, apellido: req.body.Apellido, genero: req.body.Genero, fecha: req.body.Fecha,
+        nivel: req.body.Nivel, estado: req.body.Estado };
       collection.insert([student], function(err, result){
         if(err){
           console.log(err);
         }else{
-          res.redirect('list');
+          res.redirect('list'); 
         }
         db.close();
       });
