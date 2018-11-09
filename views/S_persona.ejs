@@ -7,9 +7,9 @@
   <body>
     <% include templates/header.ejs %>
     <h1><%= form %></h1>
-    <p>Welcome to <%= form %></p>
+    <p>Bienvenido a la <%= form %></p>
 
-
+<!--
     <form name="addStudent" action="/S_persona/addStudent" method="post">
 
     <% for(var exKey in campos.persona) { %>
@@ -21,9 +21,54 @@
 
     <div class="button">
         <button type="submit">Send your message</button>
-    </div>
+    </div>-->
 
-    </form> 
+
+    Nombre: <input type="text" name="fnombre"><br>
+    Apellido: <input type="text" name="fapellido"><br>
+    <p>Genero : </p>
+    Masculino: <input type="checkbox" name="fmasculino">
+    Femenino: <input type="checkbox" name="ffemenino">
+    Otro: <input type="checkbox" name="fotro"><br>
+    Fecha de Nacimiento: <input type="date" name="ffnacimiento"><br>
+    <p>Nivel educativo: </p>
+    <select>
+      <option value="fpreescolar">Preescolar</option>
+      <option value="fprimaria">Primaria</option>
+      <option value="fsecundaria">Secundaria</option>
+      <option value="ftecnica">Técnica</option>
+      <option value="funiversitaria">Universiaria</option>
+      <option value="fpostgrado">Postgrado</option>
+    </select>
+    <!--Preescolar: <input type="checkbox" name="fpreescolar"><br>
+    Primaria: <input type="checkbox" name="fprimaria"><br>
+    Secundaria: <input type="checkbox" name="fsecundaria"><br>
+    Técnica: <input type="checkbox" name="ftecnica"><br>
+    Universiaria: <input type="checkbox" name="funiversitaria"><br>
+    Postgrado: <input type="checkbox" name="fpostgrado"><br> -->    
+    <p>Estado civil : </p>
+    <select>
+      <option value="fsoltero">Soltero/a</option>
+      <option value="fcomprometido">Comprometido/a</option>
+      <option value="funionl">Unión libre</option>
+      <option value="fcasado">Casado/a</option>
+      <option value="fdivorciado">Divorciado/a</option>
+      <option value="fviudo">Viudo/a</option>
+    </select><br>
+    
+    <!--
+    Soltero/a: <input type="checkbox" name="fsoltero"><br>
+    Comprometido/a: <input type="checkbox" name="fcomprometido"><br>
+    Unión libre: <input type="checkbox" name="funionl"><br>
+    Casado/a: <input type="checkbox" name="fcasado"><br>
+    Divorciado/a: <input type="checkbox" name="fdivorciado"><br>
+    Viudo/a: <input type="checkbox" name="fviudo"><br>-->
+    
+    <button type="submit">Send your message</button>
+
+    </form>
+    
+    
 
   </body>
 </html>
