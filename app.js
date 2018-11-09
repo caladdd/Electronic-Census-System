@@ -7,10 +7,12 @@ var bodyParser = require('body-parser');
 //mongo
 const mongoose = require('mongoose');
 var mongo = require('mongodb');
+var uri = "mongodb+srv://admin:admin@ecs-ehru3.mongodb.net/test?retryWrites=true"
 
-mongoose.connect("",{
+mongoose.connect(uri,{
     useMongoClient: true
 });
+
 
 //routes
 var routes = require('./routes/index');
