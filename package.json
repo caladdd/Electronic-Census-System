@@ -13,6 +13,7 @@
     "express": ">=4.5.0",
     "kerberos": "~0.0.17",
     "mongodb": "~2.0.33",
+    "mongoose": "^5.3.7",
     "morgan": "~1.0.0",
     "static-favicon": "~1.0.0"
   }

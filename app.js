@@ -5,7 +5,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //mongo
+const mongoose = require('mongoose');
 var mongo = require('mongodb');
+
+mongoose.connect("",{
+    useMongoClient: true
+});
 
 //routes
 var routes = require('./routes/index');
