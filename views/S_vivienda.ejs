@@ -8,8 +8,35 @@
     <% include templates/header.ejs %>
     <h1><%= form %></h1>
     <p>Welcome to <%= form %></p>
-    <h2>Jajajajaj</h2>
-    Hogar: <input type="text" name="fname"><br>
+    <form name="addStudent" action="/S_persona/addStudent" method="post"></form>
+    <p>Tipo de vivienda : </p><br>
+    Casa : <input type="radio" name="ftipovivienda">
+    Apartamento : <input type="radio" name="ftipovivienda">
+    Otro : <input type="radio" name="ftipovivienda"><br>
+    Dirección de la vivienda : <input type="text" name="fdireccion"><br>
+    Número de personas con las que comparte la vivienda : <input type="number" name="fnpersonasvive"><br>
+    Estrato socioeconomico de la vivienda : <input type="number" name="festrato"><br>
+    Número de habitaciones que se usan como dormitorio : <input type="number" name="fhabitaciones"><br>
+    Área (en metros²) de la vivienda : <input type="number" name="fareavivienda"> mt²<br>
+    Identificación de la vivienda (Apartamento 302, casa 123, etc...) : <input type="text" name="fidvivienda"><br>
+    <p>Su familia : </p><br>
+    Paga arriendo por la vivienda : <input type="radio" name="faduenacion">
+    Es dueña de la vivienda : <input type="radio" name="faduenacion">
+    Otro : <input type="radio" name="faduenacion"><br>
+    Cuánto paga de administración : <input type="text" name="fpagoadministracion"><br>
+    <p>Si paga arriendo : </p><br>
+    Cuánto paga : <input type="text" name="fpagoarriendo"><br>
+    <p>De los siguientes servivios, cuales posee su vivienda : </p><br>
+    Energía eléctrica : <input type="checkbox" name="fservicios"><br>
+    Alcantarillado : <input type="checkbox" name="fservicios"><br>
+    Acueducto : <input type="checkbox" name="fservicios"><br>
+    Gas natural : <input type="checkbox" name="fservicios"><br>
+    Teléfono : <input type="checkbox" name="fservicios"><br>
+    Internet : <input type="checkbox" name="fservicios"><br>
+    Cuántas personas con las que vive, ayudan económicamente al hogar : <input type="number" name="fnpersonasapoyoec"><br>
+    
+  
+
     <button type="submit">Send your message</button>
     </form> 
 
