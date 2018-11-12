@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= form %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include templates/head.ejs %>
   </head>
   <body>
     <% include templates/header.ejs %>
@@ -87,6 +87,6 @@
     </form>
     
     
-
+    <% include templates/scripts.ejs %>
   </body>
 </html>

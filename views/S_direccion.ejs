@@ -2,12 +2,14 @@
 <html>
   <head>
     <title><%= form %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <% include templates/head.ejs %>
   </head>
   <body>
     <% include templates/header.ejs %>
     <h1><%= form %></h1>
     <p>Welcome to <%= form %></p>
     <h2>Jajajajaja</h2>
+
+    <% include templates/scripts.ejs %>
   </body>
 </html>
