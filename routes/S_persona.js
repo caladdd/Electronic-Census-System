@@ -10,8 +10,7 @@ router.get('/', function(req, res, next) {
   res.render('S_persona', { form: 'Sección persona' , campos : formulario});
 });
 
-// get mongo
-
+/** GET formulario persona */
 router.get('/list', function(req, res){
   const fnombre = req.params.list;
   Persona.findById({fnombre : fnombre})
@@ -31,6 +30,7 @@ router.get('/list', function(req, res){
     });
 });
 
+/** POST formulario persona */
 router.post('/formpersona', function(req, res){
   const persona = new Persona({
     ftdocumento: req.body.ftdocumento,
@@ -53,7 +53,6 @@ router.post('/formpersona', function(req, res){
     fingresomensual: req.body.fingresomensual,
     ftiemporesidencia: req.body.ftiemporesidencia
   });
-  console.log(persona);
   persona
     .save()
     .then(result => {
@@ -67,8 +66,6 @@ router.post('/formpersona', function(req, res){
       console.log(err)
       res.status(500).json({error: err})
     });
-    
-
 });
 
 module.exports = router;

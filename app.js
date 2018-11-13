@@ -6,7 +6,6 @@ var bodyParser = require('body-parser');
 
 //mongo
 const mongoose = require('mongoose');
-var mongo = require('mongodb');
 var uri = "mongodb+srv://admin:admin@ecs-ehru3.mongodb.net/test?retryWrites=true"
 
 mongoose.connect(uri,{
@@ -69,6 +68,5 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
 
 module.exports = app;

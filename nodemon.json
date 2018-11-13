@@ -1,6 +1,6 @@
 {
     "env": {
-        "MONGO_PW" : "admin1234e"
+        "MONGO_PW" : "admin"
     }
 
 }
