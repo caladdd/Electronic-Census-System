@@ -3,6 +3,7 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
 
 //mongo
 const mongoose = require('mongoose');
@@ -17,8 +18,7 @@ mongoose.connect(uri,{
 var routes = require('./routes/index');
 var S_persona = require('./routes/S_persona');
 var S_vivienda = require('./routes/S_vivienda');
-var S_direccion = require('./routes/S_direccion');
-var S_retroalimentacion = require('./routes/S_retroalimentacion');
+var Soporte = require('./routes/Soporte');
 
 var app = express();
 
@@ -35,8 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/S_persona', S_persona);
 app.use('/S_vivienda', S_vivienda);
-app.use('/S_direccion', S_direccion);
-app.use('/S_retroalimentacion', S_retroalimentacion);
+app.use('/Soporte', Soporte);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
