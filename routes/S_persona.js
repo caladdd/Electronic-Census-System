@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var mongodb = require('mongodb')
 var formulario = require("../campos/formulario.json");
+const mongoose = require('mongoose');
 
 const Persona = require('../models/persona');
 
@@ -13,9 +13,8 @@ router.get('/', function(req, res, next) {
 // get mongo
 
 router.get('/list', function(req, res){
-  //Url list
-  const nombre = req.params.list;
-  Persona.findById({nombre : nombre})
+  const fnombre = req.params.list;
+  Persona.findById({fnombre : fnombre})
     .exec()
     .then(doc => {
       console.log("from database", doc);
@@ -30,68 +29,37 @@ router.get('/list', function(req, res){
       console.log(err);
       res.status(500).json({error : err});
     });
-
-  //var MongoClient = mongodb.MongoClient;
-  //var url = 'mongodb://localhost:27017/sampsite';
-  //MongoClient.connect(url, function(err, db){
-  //  if(err){
-  //    console.log("Unable to connect to the server ", err);
-  //  }else{
-  //    console.log("Connection Established ");
-  //    var collection = db.collection('students')
-  //    collection.find({}).toArray(function(err, result){
-  //      if(err){
-  //        res.send(err);
-  //      }else if(result.length){
-  //        res.render('studenlist', {
-  //          'studenlist' : result
-  //        });
-  //      }else{
-  ///        res.send('No documents found')
-  //      }
-  //      db.close();
-  //    });
-  //  }
-  //});
 });
 
-router.post('/addStudent', function(req, res){
-  //var MongoClient = mongodb.MongoClient;
-  //var url = 'mongodb://localhost:27017/sampsite';
-  //MongoClient.connect(url, function(err, db){
-  //  if(err){
-  //    console.log("Unable to connect to the server ", err);
-  //  }else{
-  //    console.log("Connection Established ");
-
-  //    var collection = db.collection('students');
-
-  //    var student = { nombre: req.body.Nombre, edad: req.body.Edad, 
-  //      ciudad: req.body.Ciudad, celular: req.body.Celular };
-  //    collection.insert([student], function(err, result){
-  //      if(err){
-  //        console.log(err);
-  //      }else{
-  //        res.redirect('list');
-  //      }
-  //      db.close();
-  //    });
-  //  }
-  //});
-
+router.post('/formpersona', function(req, res){
   const persona = new Persona({
-    nombre: req.body.Nombre,
-    edad: req.body.Edad, 
-    ciudad: req.body.Ciudad,
-    celular: req.body.Celular
+    ftdocumento: req.body.ftdocumento,
+    fndocumento: req.body.fndocumento,
+    fnombre: req.body.fnombre,
+    fapellido: req.body.fapellido, 
+    fgenero: req.body.fgenero,
+    ffechanacimiento: req.body.ffechanacimiento,
+    fpaisnacimiento: req.body.fpaisnacimiento,
+    fciudadnacimiento: req.body.fciudadnacimiento,
+    fedad: req.body.fedad,
+    fcelular: req.body.fcelular,
+    fcorreo: req.body.fcorreo,
+    fniveleducativo: req.body.fniveleducativo,
+    festadocivil: req.body.festadocivil,
+    fetnia: req.body.fetnia,
+    freligion: req.body.freligion,
+    focupacion: req.body.focupacion,
+    fhorastsemanal: req.body.fhorastsemanal,
+    fingresomensual: req.body.fingresomensual,
+    ftiemporesidencia: req.body.ftiemporesidencia
   });
-
+  console.log(persona);
   persona
     .save()
     .then(result => {
       console.log(result);
       res.status(201).json({
-        message: "Post /addstudent",
+        message: "Post /formpersona",
         createPersona: result
       });
     })

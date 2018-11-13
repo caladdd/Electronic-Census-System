@@ -1,23 +1,24 @@
 const mongoose = require('mongoose');
 
 const personaSchema = mongoose.Schema({
+    ftdocumento : String,
+    fndocumento : String,
     fnombre : String,
     fapellido : String,
     fgenero : String,
-    ffechanacimiento : Number,
-    fniveleducativo : String,
-    festadocivil : String,
-    focupacion : String,
-    fetnia : String,
-    freligion : String,
-    fhorastsemanal : Number,
-    fingresomensual : Number,
+    ffechanacimiento : String,
+    fpaisnacimiento : String,
+    fciudadnacimiento: String,
     fedad : Number,
     fcelular : Number,
     fcorreo : String,
-    ftdocumento : String,
-    fndocumento : String,
-    fpaisnacimiento : String,
+    fniveleducativo : String,
+    festadocivil : String,
+    fetnia : String,
+    freligion : String,
+    focupacion : String,
+    fhorastsemanal : Number,
+    fingresomensual : Number,
     ftiemporesidencia : String
 });
 
