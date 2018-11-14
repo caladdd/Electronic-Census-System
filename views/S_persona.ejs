@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= form %></title>
-    <% include templates/head.ejs %>
-  </head>
-  <body>
-    <% include templates/header.ejs %>
-    <h1><%= form %></h1>
-    <p>Bienvenido a la <%= form %></p>
-    <form name="addStudent" action="/S_persona/addStudent" method="post"></form>
-<!--
+
+<head>
+  <title>
+    <%= form %>
+  </title>
+  <% include templates/head.ejs %>
+</head>
+
+<body>
+  <% include templates/header.ejs %>
+  <h1>
+    <%= form %>
+  </h1>
+  <p>Bienvenido a la
+    <%= form %>
+  </p>
+  <form name="addStudent" action="/S_persona/addStudent" method="post"></form>
+  <!--
     <form name="addStudent" action="/S_persona/addStudent" method="post">
 
     <% for(var exKey in campos.persona) { %>
@@ -17,76 +25,149 @@
         <label for=<%= campos.persona[exKey] %>><%= campos.persona[exKey] %> :</label>
         <input type="text" id=<%= campos.persona[exKey] %> name=<%= campos.persona[exKey] %> />
       </div>
-    <% } %>
-
-    <div class="button">
+      <% } %>
+      
+      <div class="button">
         <button type="submit">Send your message</button>
-    </div>-->
+      </div>-->
 
-
-    Nombre : <input type="text" name="fnombre"><br>
-    Apellido : <input type="text" name="fapellido"><br>
-    <p>Genero : </p>
-    Masculino : <input type="radio" name="fgenero">
-    Femenino : <input type="radio" name="fgenero">
-    Otro : <input type="radio" name="fgenero"><br>
-    Edad : <input type="number" name="fedad"><br>
-    Celular : <input type="text" name="fcelular"><br>
-    Correo electrónico : <input type="email" name="fcorreo"><br>
-    Fecha de Nacimiento : <input type="date" name="ffecganacimiento"><br>
-    <p>Tipo de documento : </p>
-    Cédula : <input type="radio" name="ftdocumento">
-    Tarjeta identidad : <input type="radio" name="ftdocumento">
-    Pasaporte : <input type="radio" name="ftdocumento"><br>
-    Número de documento : <input type="text" name="fndocumento"><br>
-    <p>Si no eres de Bolumbia :</p>
-    País de nacimiento : <input type="text" name="fpaisnacimiento"><br>
-    Cuánto tiempo llevas en Bolumbia : <input type="text" name="ftiemporesidencia"><br>
-    Ciudad de nacimiento(seas o no de Bolumbia) : <input type="text" name="fciudadnacimiento"><br>
-    <p>Nivel educativo : </p>
-    <select name="fniveleducativo">
+  <div class="form-group">
+    <label for="fnombre">Nombre</label>
+    <input type="text" name="fnombre" id="fnombre" placeholder="Nombres" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="fapellido">Apellido</label>
+    <input type="text" name="fapellido" id="fapellido" placeholder="Apellidos" class="form-control">
+  </div>
+  <div class="form-group">
+    <p>Genero </p>
+    <div class="form-check">
+      <input type="radio" name="fgenero" id="gmasculino" value="masculino" class="form-check-input">
+      <label for="gmasculino" class="form-check-label">Masculino</label>
+    </div>
+    <div class="form-check">
+      <input type="radio" name="fgenero" id="gfemenino" value="femenino" class="form-check-input">
+      <label for="gfemenino" class="form-check-label">Femenino</label>
+    </div>
+    <div class="form-check">
+      <input type="radio" name="fgenero" id="gotro" value="otro" class="form-check-input">
+      <label for="gotro" class="form-check-label">Otro</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="fedad">Edad</label>
+    <input type="number" name="fedad" id="fedad" min="0" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="fcelular">Celular</label>
+    <input type="tel" name="fcelular" id="fcelular" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="femail">Correo electrónico</label>
+    <input type="email" name="fcorreo" class="form-control" id="femail" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="ffechanacimiento">Fecha de nacimiento</label>
+    <input type="date" name="ffechanacimiento" id="ffechanacimiento" class="form-control">
+  </div>
+  <div class="form-group">
+    <p>Tipo de documento</p>
+    <div class="form-check">
+      <input type="radio" name="ftdocumento" id="ftcedula" value="cedula" class="form-check-input">
+      <label for="ftcedula" class="form-check-label">Cédula</label>
+    </div>
+    <div class="form-check">
+      <input type="radio" name="ftdocumento" id="ftidentidad" value="identidad" class="form-check-input">
+      <label for="ftidentidad" class="form-check-label">Tarjeta identidad</label>
+    </div>
+    <div class="form-check">
+      <input type="radio" name="ftdocumento" id="ftpasaporte" value="pasaporte" class="form-check-input">
+      <label for="ftpasaporte" class="form-check-label">Pasaporte</label>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="ndocumento">Número de documento</label>
+    <input type="text" name="fndocumento" id="ndocumento" placeholder="Numero de documeto" class="form-control">
+  </div>
+  <p>Si no eres de Bolumbia :</p>
+  <div class="form-group">
+    <label for="fpaisnacimiento">País de nacimiento</label>
+    <input type="text" name="fpaisnacimiento" id="fpaisnacimiento" class="form-control" placeholder="País de Nacimiento">
+  </div>
+  <div class="form-group">
+    <label for="ftiemporesidencia">Cuánto tiempo llevas en Bolumbia</label>
+    <input type="text" name="ftiemporesidencia" id="ftiemporesidencia" class="form-control" placeholder="Ej: 2 Años">
+    
+  </div>
+  <div class="form-group">
+      <label for="fciudadnacimiento">Ciudad de nacimiento(seas o no de Bolumbia)</label>      
+      <input type="text" name="fciudadnacimiento" id="fciudadnacimiento" class="form-control" placeholder="Ej: Medelumbia">
+  </div>
+  <div class="form-group">
+    <label for="fniveleducativo">Nivel educativo</label>
+    <select name="fniveleducativo" class="custom-select custom-select-lg" id="fniveleducativo">
+      <option selected disabled>Escoge tu nivel educativo</option>
       <option value="fpreescolar">Preescolar</option>
       <option value="fprimaria">Primaria</option>
       <option value="fsecundaria">Secundaria</option>
       <option value="ftecnica">Técnica</option>
-      <option value="funiversitaria">Universiaria</option>
+      <option value="funiversitaria">Universitaria</option>
       <option value="fpostgrado">Postgrado</option>
+      <option value="fmaestria">Maestría</option>
+      <option value="fdoctorado">Doctorado</option>
+      <option value="fninguno">Ninguno</option>
     </select>
-    <p>Etnía : </p>
-    <select name="fetnia">
+  </div>
+  <div class="form-group">    
+    <label for="fetnia">Etnía</label>
+    <select name="fetnia" id="fetnia" class="custom-select custom-select-lg">
+        <option selected disabled>Escoge tu Etnía</option>
       <option value="fmestizo">Mestizo</option>
       <option value="fblanco">Blanco</option>
-      <option value="fafrocolombiano">Afrocolombiano</option>
+      <option value="fafrocolombiano">Afrobolumbiano</option>
       <option value="fmulato">Mulato</option>
       <option value="findigena">Indigena</option>
       <option value="fgitano">Gitano</option>
-    </select><br>
-    <br>
-    Religión : <input type="text" name="freligion"><br>
-    <p>Estado civil : </p>
-    <select name="festadocivil">
-      <option value="fsoltero">Soltero/a</option>
-      <option value="fcomprometido">Comprometido/a</option>
-      <option value="funionl">Unión libre</option>
-      <option value="fcasado">Casado/a</option>
-      <option value="fdivorciado">Divorciado/a</option>
-      <option value="fviudo">Viudo/a</option>
-    </select><br>
-  
-    <p>Ocupación : </p>
-    Empleado: <input type="radio" name="focupacion">
-    Desempleado: <input type="radio" name="focupacion">
-    Independiente: <input type="radio" name="focupacion">
-    Estudiante: <input type="radio" name="focupacion">
-   <br>
-   <p>Si trabajas</p> <br> 
-   Cuántas horas a la semana: <input type="number" name="fhorastsemanal"><br>
-   Cuál es su ingreso mensual: <input type="text" name="fingresomensual"><br>
-    <button type="submit">Send your message</button>
+    </select>
+    
+  </div>
+  <div class="form-group">
 
-    </form>
-    
-    
-    <% include templates/scripts.ejs %>
-  </body>
+  </div>
+  <div class="form-group">
+
+  </div>
+  <div class="form-group">
+
+  </div>
+
+
+  Religión : <input type="text" name="freligion">
+  <p>Estado civil : </p>
+  <select name="festadocivil">
+    <option value="fsoltero">Soltero/a</option>
+    <option value="fcomprometido">Comprometido/a</option>
+    <option value="funionl">Unión libre</option>
+    <option value="fcasado">Casado/a</option>
+    <option value="fdivorciado">Divorciado/a</option>
+    <option value="fviudo">Viudo/a</option>
+  </select>
+
+  <p>Ocupación : </p>
+  Empleado: <input type="radio" name="focupacion">
+  Desempleado: <input type="radio" name="focupacion">
+  Independiente: <input type="radio" name="focupacion">
+  Estudiante: <input type="radio" name="focupacion">
+
+  <p>Si trabajas</p>
+  Cuántas horas a la semana: <input type="number" name="fhorastsemanal">
+  Cuál es su ingreso mensual: <input type="text" name="fingresomensual">
+  <button type="submit">Send your message</button>
+
+  </form>
+
+
+  <% include templates/scripts.ejs %>
+</body>
+
 </html>
