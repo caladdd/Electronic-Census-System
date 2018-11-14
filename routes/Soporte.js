@@ -4,9 +4,7 @@ var nodemailer = require('nodemailer');
 
 /* GET soporte home page. */
 router.get('/', function(req, res, next) {
-    res.status(201).json({
-        message: "Post /soporte",
-      });
+    res.render('soporte');
   //res.render('soporte'/*{ title: 'Express' }*/);
 });
 

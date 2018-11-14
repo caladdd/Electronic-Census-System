@@ -13,12 +13,14 @@ mongoose.connect(uri,{
     useMongoClient: true
 });
 
+mongoose.Promise = global.Promise;
 
 //routes
 var routes = require('./routes/index');
 var S_persona = require('./routes/S_persona');
 var S_vivienda = require('./routes/S_vivienda');
 var Soporte = require('./routes/Soporte');
+var user = require('./routes/user');
 
 var app = express();
 
@@ -35,7 +37,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/S_persona', S_persona);
 app.use('/S_vivienda', S_vivienda);
-app.use('/Soporte', Soporte);
+app.use('/soporte', Soporte);
+app.use('/user', user);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

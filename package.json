@@ -6,11 +6,13 @@
     "start": "nodejs ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.3",
     "debug": ">=2.6.9",
     "ejs": ">=2.5.5",
     "express": ">=4.5.0",
+    "jsonwebtoken": "^8.4.0",
     "kerberos": "~0.0.17",
     "mongodb": "~2.0.33",
     "mongoose": "^5.3.7",
