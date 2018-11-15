@@ -30,23 +30,12 @@
       </div>
       <div class="row">
         <div class="form-group col-sm-12 col-md-6">
-          <p>Genero </p>
-          <div class="form-check form-check-inline">
-            <input type="radio" name="fgenero" id="gmasculino" value="masculino" class="form-check-input" required>
-            <label for="gmasculino" class="form-check-label">Masculino</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input type="radio" name="fgenero" id="gfemenino" value="femenino" class="form-check-input" required>
-            <label for="gfemenino" class="form-check-label">Femenino</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input type="radio" name="fgenero" id="gotro" value="otro" class="form-check-input" required>
-            <label for="gotro" class="form-check-label">Otro</label>
-          </div>
-        </div>
-        <div class="form-group col-sm-12 col-md-6">
           <label for="fedad">Edad</label>
           <input type="number" name="fedad" id="fedad" min="0" class="form-control" required>
+        </div>
+        <div class="form-group col-sm-12 col-md-6">
+            <label for="ffechanacimiento">Fecha de nacimiento</label>
+            <input type="date" name="ffechanacimiento" id="ffechanacimiento" class="form-control" required>
         </div>
       </div>
       <div class="row">
@@ -60,79 +49,97 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="ffechanacimiento">Fecha de nacimiento</label>
-        <input type="date" name="ffechanacimiento" id="ffechanacimiento" class="form-control" required>
+        <p>Genero </p>
+          <div class="form-check form-check-inline">
+            <input type="radio" name="fgenero" id="gmasculino" value="masculino" class="form-check-input" required>
+            <label for="gmasculino" class="form-check-label">Masculino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" name="fgenero" id="gfemenino" value="femenino" class="form-check-input" required>
+            <label for="gfemenino" class="form-check-label">Femenino</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input type="radio" name="fgenero" id="gotro" value="otro" class="form-check-input" required>
+            <label for="gotro" class="form-check-label">Otro</label>
+          </div>
       </div>
-      <div class="form-group">
-        <label for="ftdocumento">Tipo de documento</label>
-        <select name="ftdocumento" id="ftdocumento" class="custom-select custom-select-lg" required>
-          <option selected disabled>Elige tu tipo de documento</option>
-          <option value="cedula">Cédula</option>
-          <option value="identidad">Tarjeta de identidad</option>
-          <option value="pasaporte">Pasaporte</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="ndocumento">Número de documento</label>
-        <input type="text" name="fndocumento" id="ndocumento" placeholder="Numero de documeto" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="fpaisnacimiento">País de nacimiento</label>
-        <input type="text" name="fpaisnacimiento" id="fpaisnacimiento" class="form-control" placeholder="País de Nacimiento" required>
-      </div>
-      <div class="extranjero" id="bloqueExtranjero">
-        <p>Si no eres de Bolumbia :</p>
-        <div class="form-group">
-          <label for="ftiemporesidencia">Cuánto tiempo llevas en Bolumbia</label>
-          <input type="text" name="ftiemporesidencia" id="ftiemporesidencia" class="form-control" placeholder="Ej: 2 Años">
+      <div class="row">
+        <div class="form-group col-sm-12 col-md-6">
+          <label for="ftdocumento">Tipo de documento</label>
+          <select name="ftdocumento" id="ftdocumento" class="custom-select" required>
+            <option selected disabled>Elige tu tipo de documento</option>
+            <option value="cedula">Cédula</option>
+            <option value="identidad">Tarjeta de identidad</option>
+            <option value="pasaporte">Pasaporte</option>
+          </select>
+        </div>
+        <div class="form-group col-sm-12 col-md-6">
+          <label for="ndocumento">Número de documento</label>
+          <input type="text" name="fndocumento" id="ndocumento" placeholder="Numero de documeto" class="form-control" required>
         </div>
       </div>
-      <div class="form-group">
-        <label for="fciudadnacimiento">Ciudad de nacimiento(seas o no de Bolumbia)</label>
-        <input type="text" name="fciudadnacimiento" id="fciudadnacimiento" class="form-control" placeholder="Ej: Medelumbia" required>
+      <div class="row">
+        <div class="form-group col-sm-12 col-md-6">
+          <label for="fpaisnacimiento">País de nacimiento</label>
+          <input type="text" name="fpaisnacimiento" id="fpaisnacimiento" class="form-control" placeholder="País de Nacimiento" required>
+        </div>
+        <div class="extranjero col-sm-12 col-md-6" id="bloqueExtranjero">
+          <div class="form-group">
+            <label for="ftiemporesidencia">¿Cuánto tiempo llevas en Bolumbia?</label>
+            <input type="text" name="ftiemporesidencia" id="ftiemporesidencia" class="form-control" placeholder="Ej: 2 Años">
+          </div>
+        </div>
+        <div class="form-group col">
+          <label for="fciudadnacimiento">Ciudad de nacimiento(seas o no de Bolumbia)</label>
+          <input type="text" name="fciudadnacimiento" id="fciudadnacimiento" class="form-control" placeholder="Ej: Medelumbia" required>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="fniveleducativo">Nivel educativo</label>
-        <select name="fniveleducativo" class="custom-select custom-select-lg" id="fniveleducativo" required>
-          <option selected disabled value="">Escoge tu nivel educativo</option>
-          <option value="preescolar">Preescolar</option>
-          <option value="primaria">Primaria</option>
-          <option value="secundaria">Secundaria</option>
-          <option value="tecnica">Técnica</option>
-          <option value="universitaria">Universitaria</option>
-          <option value="postgrado">Postgrado</option>
-          <option value="maestria">Maestría</option>
-          <option value="doctorado">Doctorado</option>
-          <option value="ninguno">Ninguno</option>
-        </select>
+      <div class="row">
+        <div class="form-group col-sm-12 col-md-6">
+          <label for="fniveleducativo">Nivel educativo</label>
+          <select name="fniveleducativo" class="custom-select custom-select-lg" id="fniveleducativo" required>
+            <option selected disabled value="">Escoge tu nivel educativo</option>
+            <option value="preescolar">Preescolar</option>
+            <option value="primaria">Primaria</option>
+            <option value="secundaria">Secundaria</option>
+            <option value="tecnica">Técnica</option>
+            <option value="universitaria">Universitaria</option>
+            <option value="postgrado">Postgrado</option>
+            <option value="maestria">Maestría</option>
+            <option value="doctorado">Doctorado</option>
+            <option value="ninguno">Ninguno</option>
+          </select>      
+        </div>
+        <div class="form-group col-sm-12 col-md-6">
+          <label for="fetnia">Etnía</label>
+          <select name="fetnia" id="fetnia" class="custom-select custom-select-lg" required> 
+            <option selected disabled value="">Escoge tu Etnía</option>
+            <option value="fmestizo">Mestizo</option>
+            <option value="fblanco">Blanco</option>
+            <option value="fafrocolombiano">Afrobolumbiano</option>
+            <option value="fmulato">Mulato</option>
+            <option value="findigena">Indigena</option>
+            <option value="fgitano">Gitano</option>
+          </select>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="fetnia">Etnía</label>
-        <select name="fetnia" id="fetnia" class="custom-select custom-select-lg" required> 
-          <option selected disabled value="">Escoge tu Etnía</option>
-          <option value="fmestizo">Mestizo</option>
-          <option value="fblanco">Blanco</option>
-          <option value="fafrocolombiano">Afrobolumbiano</option>
-          <option value="fmulato">Mulato</option>
-          <option value="findigena">Indigena</option>
-          <option value="fgitano">Gitano</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="freligion">Religión</label>
-        <input type="text" name="freligion" id="freligion" class="form-control" placeholder="Religión" required>
-      </div>
-      <div class="form-group">
-        <label for="festadocivil">Estado civil</label>
-        <select name="festadocivil" id="festadocivil" class="custom-select custom-select-lg" required>
-          <option selected disabled value="">Seleccione su estado civil</option>
-          <option value="fsoltero">Soltero/a</option>
-          <option value="fcomprometido">Comprometido/a</option>
-          <option value="funionl">Unión libre</option>
-          <option value="fcasado">Casado/a</option>
-          <option value="fdivorciado">Divorciado/a</option>
-          <option value="fviudo">Viudo/a</option>
-        </select>
+      <div class="row">
+        <div class="form-group col-sm-12 col-md-6">
+          <label for="freligion">Religión</label>
+          <input type="text" name="freligion" id="freligion" class="form-control" placeholder="Religión" required>
+        </div>
+        <div class="form-group col-sm-12 col-md-6">
+          <label for="festadocivil">Estado civil</label>
+          <select name="festadocivil" id="festadocivil" class="custom-select" required>
+            <option selected disabled value="">Seleccione su estado civil</option>
+            <option value="fsoltero">Soltero/a</option>
+            <option value="fcomprometido">Comprometido/a</option>
+            <option value="funionl">Unión libre</option>
+            <option value="fcasado">Casado/a</option>
+            <option value="fdivorciado">Divorciado/a</option>
+            <option value="fviudo">Viudo/a</option>
+          </select>
+        </div>
       </div>
       <p>Ocupación </p>
       <div class="form-group">
@@ -156,11 +163,11 @@
       <p>Si trabajas</p>
       <div class="form-group">
         <label for="fhorastsemanal">¿Cuántas horas a la semana?</label>
-        <input type="number" name="fhorastsemanal" id="fhorastsemanal" min="0" class="form-control" required>
+        <input type="number" name="fhorastsemanal" id="fhorastsemanal" min="0" class="form-control">
       </div>
       <div class="form-group">
         <label for="fingresomensual">¿Cuál es su ingreso mensual?</label>
-        <input type="text" name="fingresomensual" id="fingresomensual" placeholder="Ej: 900.000 mensual" class="form-control" required>
+        <input type="text" name="fingresomensual" id="fingresomensual" placeholder="Ej: 900.000 mensual" class="form-control">
       </div>
       <button type="button" class="btn btn-primary" id="submitPersona">Enviar información</button>
     </form>
