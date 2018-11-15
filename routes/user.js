@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
+const Persona = require('../models/persona');
 
 router.post('/signup', (req, res, next) =>{
     User.find({email: req.body.email})
@@ -23,11 +24,33 @@ router.post('/signup', (req, res, next) =>{
                 } else{
                     const user = new User({
                         email: req.body.email,
+                        fndocumento: req.body.fndocumento,
                         password: hash
-                    })      
+                    })
+                    const persona = new Persona({
+                        ftdocumento: req.body.ftdocumento,
+                        fndocumento: req.body.fndocumento,
+                        fnombre: req.body.fnombre,
+                        fapellido: req.body.fapellido, 
+                        fgenero: req.body.fgenero,
+                        fcorreo: req.body.email
+                      });      
                     user
                     .save()
                     .then(result => {
+                        persona
+                        .save()
+                        .then(result => {
+                        console.log(result);
+                        res.status(201).json({
+                            message: "Post /formpersona",
+                            createPersona: result
+                        });
+                        })
+                        .catch(err => {
+                        console.log(err)
+                        res.status(500).json({error: err})
+                        });
                         console.log(result);
                         res.status(201).json({
                             message: 'User creado'

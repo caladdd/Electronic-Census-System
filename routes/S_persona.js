@@ -68,4 +68,34 @@ router.post('/formpersona', function(req, res){
     });
 });
 
+
+/**update person */
+router.patch('/formpersona',(req, res, next)=>{
+  const id = req.body.fndocumento;
+  Persona.update({fndocumento: id},{$set: {
+    ffechanacimiento: req.body.ffechanacimiento,
+    fpaisnacimiento: req.body.fpaisnacimiento,
+    fciudadnacimiento: req.body.fciudadnacimiento,
+    fedad: req.body.fedad,
+    fcelular: req.body.fcelular,
+    fniveleducativo: req.body.fniveleducativo,
+    festadocivil: req.body.festadocivil,
+    fetnia: req.body.fetnia,
+    freligion: req.body.freligion,
+    focupacion: req.body.focupacion,
+    fhorastsemanal: req.body.fhorastsemanal,
+    fingresomensual: req.body.fingresomensual,
+    ftiemporesidencia: req.body.ftiemporesidencia
+  }})
+  .exec()
+  .then(result =>{
+    console.log(result);
+      res.status(201).json(result);
+  })
+  .catch(err => {
+      console.log(err)
+      res.status(500).json({error: err})
+  });
+});
+
 module.exports = router;
