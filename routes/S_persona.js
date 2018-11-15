@@ -1,23 +1,20 @@
 var express = require('express');
 var router = express.Router();
-var formulario = require("../campos/formulario.json");
 const mongoose = require('mongoose');
 
 const Persona = require('../models/persona');
 
 /* GET persona page. */
 router.get('/', function(req, res, next) {
-  res.render('S_persona', { form: 'Sección persona' , campos : formulario});
-});
-
-/** GET formulario persona */
-router.get('/:list', function(req, res){
-  const fid = req.params.list;
+  var variable = req.query.valid
+  console.log(variable);
+  const fid = variable;
   Persona.find({fndocumento: fid})
     .exec()
     .then(doc => {
       console.log("from database", doc);
       if(doc){
+        console.log("/home");
         res.status(200).json(doc);
       }
       else{
@@ -28,6 +25,13 @@ router.get('/:list', function(req, res){
       console.log(err);
       res.status(500).json({error : err});
     });
+  //res.render('S_persona', { form: 'Sección persona'});
+});
+
+/** GET formulario persona */
+router.get('/:list', function(req, res){
+  const fid = req.params.list;
+  res.redirect('./?valid=' + fid);
 });
 
 /** POST formulario persona */
