@@ -7,6 +7,12 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const Persona = require('../models/persona');
 
+/* GET signup page. */
+router.get('/signup', function(req, res, next) {
+    res.render('signup');
+  });
+
+/** POST signup */
 router.post('/signup', (req, res, next) =>{
     User.find({email: req.body.email})
     .exec()
@@ -68,6 +74,12 @@ router.post('/signup', (req, res, next) =>{
     });
 });
 
+/* GET login page. */
+router.get('/login', function(req, res, next) {
+    res.render('login');
+  });
+
+/**POST login */
 router.post('/login',(req, res, next) => {
     User.find({email: req.body.email})
     .exec()
