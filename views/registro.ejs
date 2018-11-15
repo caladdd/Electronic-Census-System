@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Registro
+    </title>
+    <% include templates/head.ejs %>
+</head>
+
+<body>
+    <div class="container">
+        <% include templates/header.ejs %>
+            <h1>
+                <%= form %>
+            </h1>
+            <p>Bienvenido a la
+                <%= form %>
+            </p>
+            <div class="form-group">
+                <label for="Tdocumentodeid">Tipo de documento de identidad</label>
+                <select name="Tdocumentodeid" class="custom-select custom-select-lg" id="Tdocumentodeid" required>
+                  <option selected disabled value="">Escoge tu tipo de documento de identidad</option>
+                  <option value="preescolar">Tarjeta de identidad</option>
+                  <option value="primaria">Cedula de ciudadania</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ndocumento">Numero de documento</label>
+                <input type="text" name="ndocumento" id="ndocumento" placeholder="Numero de documento" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="fnombre">Nombre</label>
+                <input type="text" name="fnombre" id="fnombre" placeholder="Nombres" class="form-control" required>
+            </div>
+
+            <div class="form-group col-sm-12 col-md-6">
+                <p>Genero </p>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="fgenero" id="gmasculino" value="masculino" class="form-check-input" required>
+                    <label for="gmasculino" class="form-check-label">Masculino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="fgenero" id="gfemenino" value="femenino" class="form-check-input" required>
+                    <label for="gfemenino" class="form-check-label">Femenino</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" name="fgenero" id="gotro" value="otro" class="form-check-input" required>
+                    <label for="gotro" class="form-check-label">Otro</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="rcorreo">correo</label>
+                <input type="text" name="rcorreo" id="rcorreo" placeholder="Correo" class="form-control" required>
+            </div>
+
+    </div>
+</body>
