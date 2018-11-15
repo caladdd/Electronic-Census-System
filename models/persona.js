@@ -1,25 +1,25 @@
 const mongoose = require('mongoose');
 
 const personaSchema = mongoose.Schema({
-    ftdocumento : {type: String, required: true},
-    fndocumento : {type: String, required: true},
-    fnombre : {type: String, required: true},
-    fapellido : {type: String, required: true},
-    fgenero : {type: String, required: true},
-    ffechanacimiento : {type: String, default: ""},
-    fpaisnacimiento : {type: String, default: ""},
-    fciudadnacimiento: {type: String, default: ""},
-    fedad : {type: Number, default: ""},
-    fcelular : {type: Number, default: ""},
-    fcorreo : {type: String, required: true},
-    fniveleducativo : {type: String, default: ""},
-    festadocivil : {type: String, default: ""},
-    fetnia : {type: String, default: ""},
-    freligion : {type: String, default: ""},
-    focupacion : {type: String, default: ""},
-    fhorastsemanal : {type: Number, default: ""},
-    fingresomensual : {type: Number, default: ""},
-    ftiemporesidencia : {type: String, default: ""}
+    tdocumento : {type: String, required: true},
+    ndocumento : {type: String, required: true},
+    nombre : {type: String, required: true},
+    apellido : {type: String, required: true},
+    genero : {type: String, required: true},
+    fechanacimiento : {type: String, default: ""},
+    paisnacimiento : {type: String, default: ""},
+    ciudadnacimiento: {type: String, default: ""},
+    edad : {type: Number, default: ""},
+    celular : {type: Number, default: ""},
+    correo : {type: String, required: true},
+    niveleducativo : {type: String, default: ""},
+    estadocivil : {type: String, default: ""},
+    etnia : {type: String, default: ""},
+    religion : {type: String, default: ""},
+    ocupacion : {type: String, default: ""},
+    horastsemanal : {type: Number, default: ""},
+    ingresomensual : {type: Number, default: ""},
+    tiemporesidencia : {type: String, default: ""}
 });
 
 module.exports = mongoose.model('Persona', personaSchema);

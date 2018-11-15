@@ -37,25 +37,25 @@ router.get('/:list', function(req, res){
 /** POST formulario persona */
 router.post('/formpersona', function(req, res){
   const persona = new Persona({
-    ftdocumento: req.body.ftdocumento,
-    fndocumento: req.body.fndocumento,
-    fnombre: req.body.fnombre,
-    fapellido: req.body.fapellido, 
-    fgenero: req.body.fgenero,
-    ffechanacimiento: req.body.ffechanacimiento,
-    fpaisnacimiento: req.body.fpaisnacimiento,
-    fciudadnacimiento: req.body.fciudadnacimiento,
-    fedad: req.body.fedad,
-    fcelular: req.body.fcelular,
-    fcorreo: req.body.fcorreo,
-    fniveleducativo: req.body.fniveleducativo,
-    festadocivil: req.body.festadocivil,
-    fetnia: req.body.fetnia,
-    freligion: req.body.freligion,
-    focupacion: req.body.focupacion,
-    fhorastsemanal: req.body.fhorastsemanal,
-    fingresomensual: req.body.fingresomensual,
-    ftiemporesidencia: req.body.ftiemporesidencia
+    tdocumento: req.body.ftdocumento,
+    ndocumento: req.body.fndocumento,
+    nombre: req.body.fnombre,
+    apellido: req.body.fapellido, 
+    genero: req.body.fgenero,
+    fechanacimiento: req.body.ffechanacimiento,
+    paisnacimiento: req.body.fpaisnacimiento,
+    ciudadnacimiento: req.body.fciudadnacimiento,
+    edad: req.body.fedad,
+    celular: req.body.fcelular,
+    correo: req.body.fcorreo,
+    niveleducativo: req.body.fniveleducativo,
+    estadocivil: req.body.festadocivil,
+    etnia: req.body.fetnia,
+    religion: req.body.freligion,
+    ocupacion: req.body.focupacion,
+    horastsemanal: req.body.fhorastsemanal,
+    ingresomensual: req.body.fingresomensual,
+    tiemporesidencia: req.body.ftiemporesidencia
   });
   persona
     .save()
@@ -76,20 +76,20 @@ router.post('/formpersona', function(req, res){
 /**update person */
 router.patch('/formpersona',(req, res, next)=>{
   const id = req.body.fndocumento;
-  Persona.update({fndocumento: id},{$set: {
-    ffechanacimiento: req.body.ffechanacimiento,
-    fpaisnacimiento: req.body.fpaisnacimiento,
-    fciudadnacimiento: req.body.fciudadnacimiento,
-    fedad: req.body.fedad,
-    fcelular: req.body.fcelular,
-    fniveleducativo: req.body.fniveleducativo,
-    festadocivil: req.body.festadocivil,
-    fetnia: req.body.fetnia,
-    freligion: req.body.freligion,
-    focupacion: req.body.focupacion,
-    fhorastsemanal: req.body.fhorastsemanal,
-    fingresomensual: req.body.fingresomensual,
-    ftiemporesidencia: req.body.ftiemporesidencia
+  Persona.update({ndocumento: id},{$set: {
+    fechanacimiento: req.body.ffechanacimiento,
+    paisnacimiento: req.body.fpaisnacimiento,
+    ciudadnacimiento: req.body.fciudadnacimiento,
+    edad: req.body.fedad,
+    celular: req.body.fcelular,
+    niveleducativo: req.body.fniveleducativo,
+    estadocivil: req.body.festadocivil,
+    etnia: req.body.fetnia,
+    religion: req.body.freligion,
+    ocupacion: req.body.focupacion,
+    horastsemanal: req.body.fhorastsemanal,
+    ingresomensual: req.body.fingresomensual,
+    tiemporesidencia: req.body.ftiemporesidencia
   }})
   .exec()
   .then(result =>{

@@ -10,17 +10,17 @@ router.get('/', function(req, res, next) {
 /*POST formulario vivienda*/ 
 router.post('/formvivienda', function(req, res){
   const vivienda = new Vivienda({
-    fdireccion : req.body.fdireccion,
-    ftipovivienda : req.body.ftipovivienda,
-    fnpersonasvive : req.body.fnpersonasvive,
-    festrato : req.body.festrato,
-    fhabitaciones : req.body.fhabitaciones,
-    fareavivienda : req.body.fareavivienda,
-    fidvivienda : req.body.fidvivienda,
-    faduenacion : req.body.faduenacion,
-    fpagoarriendo : req.body.fpagoarriendo,
-    fservicios : req.body.fservicios,
-    fpersonasapoyoec : req.body.fpersonasapoyoec
+    direccion : req.body.fdireccion,
+    tipovivienda : req.body.ftipovivienda,
+    npersonasvive : req.body.fnpersonasvive,
+    estrato : req.body.festrato,
+    habitaciones : req.body.fhabitaciones,
+    areavivienda : req.body.fareavivienda,
+    idvivienda : req.body.fidvivienda,
+    aduenacion : req.body.faduenacion,
+    pagoarriendo : req.body.fpagoarriendo,
+    servicios : req.body.fservicios,
+    personasapoyoec : req.body.fpersonasapoyoec
   });
   vivienda
     .save()

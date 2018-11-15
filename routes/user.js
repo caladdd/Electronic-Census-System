@@ -1,6 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
@@ -30,16 +29,16 @@ router.post('/signup', (req, res, next) =>{
                 } else{
                     const user = new User({
                         email: req.body.email,
-                        fndocumento: req.body.fndocumento,
+                        ndocumento: req.body.ndocumento,
                         password: hash
                     })
                     const persona = new Persona({
-                        ftdocumento: req.body.ftdocumento,
-                        fndocumento: req.body.fndocumento,
-                        fnombre: req.body.fnombre,
-                        fapellido: req.body.fapellido, 
-                        fgenero: req.body.fgenero,
-                        fcorreo: req.body.email
+                        tdocumento: req.body.tdocumento,
+                        ndocumento: req.body.ndocumento,
+                        nombre: req.body.nombre,
+                        apellido: req.body.apellido, 
+                        genero: req.body.genero,
+                        correo: req.body.email
                       });      
                     user
                     .save()
@@ -61,6 +60,7 @@ router.post('/signup', (req, res, next) =>{
                         res.status(201).json({
                             message: 'User creado'
                         });
+                        res.render('index');
                     })
                     .catch(err =>{
                         console.log(err);
@@ -103,7 +103,8 @@ router.post('/login',(req, res, next) => {
                 {
                     expiresIn: "1h"
                 });
-                return res.status(200).json({
+                res.setHeader('authorization', 'Bearer '+ token);
+                return res.render('index').json({
                     message: "Auth successful",
                     token: token,
                     tipo: user[0].tipo
