@@ -6,26 +6,26 @@ const Persona = require('../models/persona');
 
 /* GET persona page. */
 router.get('/', function(req, res, next) {
-  var variable = req.query.valid
-  console.log(variable);
-  const fid = variable;
-  Persona.find({fndocumento: fid})
-    .exec()
-    .then(doc => {
-      console.log("from database", doc);
-      if(doc){
-        console.log("/home");
-        res.status(200).json(doc);
-      }
-      else{
-        res.status(404).json({message: "id no valido"});
-      }
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({error : err});
-    });
-  //res.render('S_persona', { form: 'Sección persona'});
+  // var variable = req.query.valid
+  // console.log(variable);
+  // const fid = variable;
+  // Persona.find({fndocumento: fid})
+  //   .exec()
+  //   .then(doc => {
+  //     console.log("from database", doc);
+  //     if(doc){
+  //       console.log("/home");
+  //       res.status(200).json(doc);
+  //     }
+  //     else{
+  //       res.status(404).json({message: "id no valido"});
+  //     }
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //     res.status(500).json({error : err});
+  //   });
+  res.render('S_persona', { form: 'Sección persona'});
 });
 
 /** GET formulario persona */
