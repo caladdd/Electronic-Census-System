@@ -11,9 +11,9 @@ router.get('/', function(req, res, next) {
 });
 
 /** GET formulario persona */
-router.get('/list', function(req, res){
-  const fnombre = req.params.list;
-  Persona.findById({fnombre : fnombre})
+router.get('/:list', function(req, res){
+  const fid = req.params.list;
+  Persona.find({fndocumento: fid})
     .exec()
     .then(doc => {
       console.log("from database", doc);
@@ -21,7 +21,7 @@ router.get('/list', function(req, res){
         res.status(200).json(doc);
       }
       else{
-        res.status(404).json({message: "nombre no valido"});
+        res.status(404).json({message: "id no valido"});
       }
     })
     .catch(err => {
