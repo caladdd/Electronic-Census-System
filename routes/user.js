@@ -104,7 +104,7 @@ router.post('/login',(req, res, next) => {
                     expiresIn: "1h"
                 });
                 res.setHeader('authorization', 'Bearer '+ token);
-                return res.render('index').json({
+                return res.status(200).json({
                     message: "Auth successful",
                     token: token,
                     tipo: user[0].tipo
