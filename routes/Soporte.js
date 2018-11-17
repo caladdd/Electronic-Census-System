@@ -8,6 +8,13 @@ router.get('/', function(req, res, next) {
   //res.render('soporte'/*{ title: 'Express' }*/);
 });
 
+/* GET soporte home page. */
+router.get('/email', function(req, res, next) {
+    res.render('soportemail');
+  //res.render('soporte'/*{ title: 'Express' }*/);
+});
+
+
 /**POST EMAIL */
 router.post('/email', function(req, res){
     console.log("h");
