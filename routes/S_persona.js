@@ -14,11 +14,16 @@ router.get('/', function(req, res, next) {
   User.find({ndocumento: fid})
     .exec()
     .then(doc => {
-      console.log("from database", doc);
+      //console.log("from database", doc);
       if(doc){
-        console.log(doc[0].tipo);
-        res.render('S_persona', { form: 'Sección persona', tipo: doc[0].tipo, campos: doc[0]});
+        Persona.find({ndocumento: fid})
+        .exec()
+        .then(persona =>{
+          //console.log("from database", persona);
+          res.render('S_persona', { form: 'Sección persona', tipo: doc[0].tipo, campos: persona[0]});
         //res.status(200).json(doc);
+        });
+        
       }
       else{
         res.status(404).json({message: "id no valido"});
@@ -33,10 +38,10 @@ router.get('/', function(req, res, next) {
 });
 
 /** GET formulario persona */
-router.get('/:list', function(req, res){
-  const fid = req.params.list;
-  res.redirect('./?valid=' + fid);
-});
+// router.get('/:list', function(req, res){
+//   const fid = req.params.list;
+//   res.redirect('./?valid=' + fid);
+// });
 
 /** POST formulario persona */
 router.post('/formpersona', function(req, res){
@@ -78,8 +83,9 @@ router.post('/formpersona', function(req, res){
 
 
 /**update person */
-router.patch('/formpersona',(req, res, next)=>{
-  const id = req.body.fndocumento;
+router.post('/:list',(req, res, next)=>{
+  const id = req.params.list;
+  console.log(id);
   Persona.update({ndocumento: id},{$set: {
     fechanacimiento: req.body.ffechanacimiento,
     paisnacimiento: req.body.fpaisnacimiento,
