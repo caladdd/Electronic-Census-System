@@ -10,7 +10,7 @@
 
 <body>
   <!-- Usuario-->
-  <%if(true){%>
+  <%if(false){%>
   <div class="container">
     <% include templates/header.ejs %>
     <h1>
@@ -187,7 +187,7 @@
       <p>Bienvenido a la
         <%= form %>
       </p>
-      <form action="" method="POST" id="formPersona">
+      <form action="/S_persona/formpersona" method="POST" id="formPersona">
         <div class="row">
           <div class="form-group col-sm-12 col-md-6">
             <label for="fnombre">Nombre</label>
@@ -314,19 +314,19 @@
         <p>Ocupación </p>
         <div class="form-group">
           <div class="form-check">
-            <input type="checkbox" name="focupacion" id="fempleado" class="form-check-input" value="empleado" required>
+            <input type="checkbox" name="focupacion" id="fempleado" class="form-check-input" value="empleado" >
             <label for="fempleado" class="form-check-label">Empleado</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" name="focupacion" id="fdesempleado" class="form-check-input" value="desempleado" required>
+            <input type="checkbox" name="focupacion" id="fdesempleado" class="form-check-input" value="desempleado" >
             <label for="fdesempleado" class="form-check-label">Desempleado</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" name="focupacion" id="findependiente" class="form-check-input" value="independiente" required>
+            <input type="checkbox" name="focupacion" id="findependiente" class="form-check-input" value="independiente" >
             <label for="findependiente" class="form-check-label">Independiente</label>
           </div>
           <div class="form-check">
-            <input type="checkbox" name="focupacion" id="festudiante" class="form-check-input" value="estudiante" required>
+            <input type="checkbox" name="focupacion" id="festudiante" class="form-check-input" value="estudiante" >
             <label for="festudiante">Estudiante</label>
           </div>
         </div>
@@ -343,7 +343,7 @@
             </div>
           </div>
         </fieldset>
-        <button type="button" class="btn btn-primary" id="submitPersona">Enviar información</button>
+        <button type="submit" class="btn btn-primary" id="submitPersona">Enviar información</button>
       </form>
     </div>
   <%}%>
