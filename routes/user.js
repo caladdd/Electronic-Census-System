@@ -19,58 +19,74 @@ router.post('/signup', (req, res, next) =>{
     .then(user =>{
         if(user.length >= 1){
             res.status(409).json({
-                message: 'email exists'
+                message: 'Email ya existente'
             });
         }else{
-            bcrypt.hash(req.body.password, 10, (err, hash) =>{
-                if(err){
-                    return res.status(500).json({
-                        error: err
+            User.find({ndocumento: req.body.ndocumento})
+            .exec()
+            .then(user =>{
+                if(user.length >= 1){
+                    res.status(409).json({
+                        message: 'Documento ya existente'
                     });
-                } else{
-                    const user = new User({
-                        email: req.body.email,
-                        ndocumento: req.body.ndocumento,
-                        password: hash
-                    })
-                    const persona = new Persona({
-                        tdocumento: req.body.tdocumento,
-                        ndocumento: req.body.ndocumento,
-                        nombre: req.body.nombre,
-                        apellido: req.body.apellido, 
-                        genero: req.body.genero,
-                        correo: req.body.email
-                      });      
-                    user
-                    .save()
-                    .then(result => {
-                        persona
-                        .save()
-                        .then(result => {
-                        console.log(result);
-                        res.status(201).json({
-                            message: "Post /formpersona",
-                            createPersona: result
-                        });
-                        })
-                        .catch(err => {
-                        console.log(err)
-                        res.status(500).json({error: err})
-                        });
-                        console.log(result);
-                        res.status(201).json({
-                            message: 'User creado'
-                        });
-                        res.render('index');
-                    })
-                    .catch(err =>{
-                        console.log(err);
-                        res.status(500).json({
-                            error: err
-                        });
+                }else{
+                    bcrypt.hash(req.body.password, 10, (err, hash) =>{
+                        if(err){
+                            return res.status(500).json({
+                                error: err
+                            });
+                        } else{
+                            const user = new User({
+                                email: req.body.email,
+                                ndocumento: req.body.ndocumento,
+                                password: hash
+                            })
+                            const persona = new Persona({
+                                tdocumento: req.body.tdocumento,
+                                ndocumento: req.body.ndocumento,
+                                nombre: req.body.nombre,
+                                apellido: req.body.apellido, 
+                                genero: req.body.genero,
+                                correo: req.body.email
+                              });      
+                            user
+                            .save()
+                            .then(result => {
+                                persona
+                                .save()
+                                .then(result => {
+                                console.log(result);
+                                res.status(201).json({
+                                    message: "Post /formpersona",
+                                    createPersona: result
+                                });
+                                })
+                                .catch(err => {
+                                console.log(err)
+                                res.status(500).json({error: err})
+                                });
+                                console.log(result);
+                                res.status(201).json({
+                                    message: 'Usuario creado'
+                                });
+                                //res.render('index');
+                            })
+                            .catch(err =>{
+                                console.log(err);
+                                res.status(500).json({
+                                    error: "Email o número de identidad ya en uso"
+                                });
+                            });
+                        }
                     });
                 }
-            });
+            })
+            .catch(err =>{
+                console.log(err);
+                res.status(500).json({
+                    error: "Email o número de identidad ya en uso"
+                });
+            }); 
         }
     });
 });

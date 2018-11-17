@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const personaSchema = mongoose.Schema({
     tdocumento : {type: String, required: true},
-    ndocumento : {type: String, required: true},
+    ndocumento : {type: String, required: true, unique: true},
     nombre : {type: String, required: true},
     apellido : {type: String, required: true},
     genero : {type: String, required: true},
@@ -11,7 +11,7 @@ const personaSchema = mongoose.Schema({
     ciudadnacimiento: {type: String, default: ""},
     edad : {type: Number, default: ""},
     celular : {type: Number, default: ""},
-    correo : {type: String, required: true},
+    correo : {type: String, required: true, unique: true},
     niveleducativo : {type: String, default: ""},
     estadocivil : {type: String, default: ""},
     etnia : {type: String, default: ""},
