@@ -10,60 +10,71 @@
 
 <body>
     <div class="container">
-
-        <p>Bienvenido a el Registro</p>
-        <form action="/user/signup" method="POST" id="signup">
-
-        <div class="form-group">
-            <label for="tdocumento">Tipo de documento de identidad</label>
-            <select name="tdocumento" class="custom-select custom-select-lg" id="tdocumento" required>
-                  <option selected disabled value="">Escoge tu tipo de documento de identidad</option>
-                  <option value="Tarjeta de identidad">Tarjeta de identidad</option>
-                  <option value="Cedula de ciudadania">Cedula de ciudadania</option>
-                </select>
+        <div class="alert" role="alert">
         </div>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="card-title">Bienvenido a el Registro</h1>
+                <form action="/user/signup" method="POST" id="signup">
+                    <div class="form-group">
+                        <label for="tdocumento">Tipo de documento de identidad</label>
+                        <select name="tdocumento" class="custom-select custom-select-lg" id="tdocumento" required>
+                            <option selected disabled value="">Escoge tu tipo de documento de identidad</option>
+                            <option value="Tarjeta de identidad">Tarjeta de identidad</option>
+                            <option value="Cedula de ciudadania">Cedula de ciudadania</option>
+                        </select>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="ndocumento">Numero de documento</label>
+                        <input type="text" name="ndocumento" id="ndocumento" placeholder="Numero de documento" class="form-control">
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" id="nombre" placeholder="Nombres" class="form-control" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control"
+                            required>
+                    </div>
+    
+                    <div class="form-group col-sm-12 col-md-6">
+                        <p>Genero </p>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="genero" id="generoM" value="masculino" class="form-check-input"
+                                required>
+                            <label for="gmasculino" class="form-check-label">Masculino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="genero" id="generoF" value="femenino" class="form-check-input"
+                                required>
+                            <label for="gfemenino" class="form-check-label">Femenino</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" name="genero" id="generoO" value="otro" class="form-check-input" required>
+                            <label for="gotro" class="form-check-label">Otro</label>
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="email">Correo</label>
+                        <input type="text" name="email" id="email" placeholder="Correo" class="form-control" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control"
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitSignup">Registrarse</button>
+                </form>
 
-        <div class="form-group">
-            <label for="ndocumento">Numero de documento</label>
-            <input type="text" name="ndocumento" id="ndocumento" placeholder="Numero de documento" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre" placeholder="Nombres" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-            <label for="apellido">Apellido</label>
-            <input type="text" name="apellido" id="apellido" placeholder="Apellido" class="form-control" required>
-        </div>
-
-        <div class="form-group col-sm-12 col-md-6">
-            <p>Genero </p>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="genero" id="genero" value="masculino" class="form-check-input" required>
-                <label for="gmasculino" class="form-check-label">Masculino</label>
             </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="genero" id="genero" value="femenino" class="form-check-input" required>
-                <label for="gfemenino" class="form-check-label">Femenino</label>
-            </div>
-            <div class="form-check form-check-inline">
-                <input type="radio" name="genero" id="genero" value="otro" class="form-check-input" required>
-                <label for="gotro" class="form-check-label">Otro</label>
-            </div>
         </div>
-
-        <div class="form-group">
-            <label for="email">Correo</label>
-            <input type="text" name="email" id="email" placeholder="Correo" class="form-control" required>
-        </div>
-
-        <div class="form-group">
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-primary" id="submitSignup">Registrarse</button>
-    </form>   
     </div>
+    <% include templates/scripts.ejs %>
+    <script src="../scripts/signup.js"></script>
 </body>

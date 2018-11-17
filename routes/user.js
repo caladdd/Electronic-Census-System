@@ -13,6 +13,7 @@ router.get('/signup', function(req, res, next) {
 
 /** POST signup */
 router.post('/signup', (req, res, next) =>{
+    console.log(req.body);
     User.find({email: req.body.email})
     .exec()
     .then(user =>{

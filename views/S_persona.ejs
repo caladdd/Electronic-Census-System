@@ -160,15 +160,19 @@
           <label for="festudiante">Estudiante</label>
         </div>
       </div>
-      <p>Si trabajas</p>
-      <div class="form-group">
-        <label for="fhorastsemanal">¿Cuántas horas a la semana?</label>
-        <input type="number" name="fhorastsemanal" id="fhorastsemanal" min="0" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="fingresomensual">¿Cuál es su ingreso mensual?</label>
-        <input type="text" name="fingresomensual" id="fingresomensual" placeholder="Ej: 900.000 mensual" class="form-control">
-      </div>
+      <fieldset>
+        <legend>Si trabajas</legend>
+        <div class="row">
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="fhorastsemanal">¿Cuántas horas a la semana?</label>
+            <input type="number" name="fhorastsemanal" id="fhorastsemanal" min="0" class="form-control">
+          </div>
+          <div class="form-group col-sm-12 col-md-6">
+            <label for="fingresomensual">¿Cuál es su ingreso mensual?</label>
+            <input type="text" name="fingresomensual" id="fingresomensual" placeholder="Ej: 900.000 mensual" class="form-control">
+          </div>
+        </div>
+      </fieldset>
       <button type="button" class="btn btn-primary" id="submitPersona">Enviar información</button>
     </form>
   </div>

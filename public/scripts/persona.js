@@ -1,22 +1,17 @@
 'use strict'
-function initForm() {
 
-    const paisInput = document.getElementById('fpaisnacimiento');
-    paisInput.addEventListener('blur', (obj) => {
-        console.log(obj.target.value);
-        let pais = obj.target.value;
+$(function() {
+    $('#fpaisnacimiento').blur(function(){
+        var pais = this.value;
         pais = pais.toUpperCase();
+        var extranjeroInput = $('#bloqueExtranjero');
+        var tiempoBolumbia = extranjeroInput[0].children[0].children[1];           
         if (pais !== 'BOLUMBIA') {
-            const extranjeroInput = document.getElementById('bloqueExtranjero');
-            extranjeroInput.style.display = "block";
-            const tiempoBolumbia = extranjeroInput.children[1].children[1];
-            console.log(tiempoBolumbia);
-            
+            extranjeroInput.show();
             tiempoBolumbia.setAttribute('required', 'required');
+        } else {
+            extranjeroInput.hide();
+            $('#ftiemporesidencia').removeAttr('required')
         }
-         
-        // if(obj.target.value ===)
     });
-}
-
-window.addEventListener('load', initForm)
+  });
