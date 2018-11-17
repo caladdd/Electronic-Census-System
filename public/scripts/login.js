@@ -1,26 +1,16 @@
 'use strict'
-var form = $('#signup');
-$(form).submit(function(event){
-    //función que se ejecuta cuando al form se le hace submit
-    event.preventDefault(); // previene que se envíen los datos por defecto
-    var formData = {};
-    var inputdivs = $('#signup').find(".form-group");
-    var radioInput = $('.form-check')[0]
-    
-    //este for es para agregar todos los datos del form
-    for(var i = 0; i < inputdivs.length; i += 1){
-        var target = inputdivs[i].children[1];
 
-        // verificar si el elemento es un radiobutton
-        if (target === radioInput) {
-            var radioValue = $("input[name='genero']:checked").val();
-            formData['genero'] = radioValue;
-        } else {
-            formData[target.name] = target.value;
-        }
-     }
+var form = $('#login');
+$(form).submit(function(event) {
+    event.preventDefault();
+    var formData = {}
+    var inputdivs = $('#login').find('input');
     
-     //si formData existe y no esta vacío hacer la petición
+    //escribe en formdata todos los datos del form tipo objeto
+    for(var i = 0; i < inputdivs.length; i += 1){    
+        formData[inputdivs[i].name] = inputdivs[i].value;
+    }
+    
     if(formData) {
         $.ajax({
             url: $(form).attr('action'),
@@ -35,11 +25,21 @@ $(form).submit(function(event){
             $('.alert').removeClass('alert-danger');
             $('.alert').addClass('alert-success');
             $('.alert').text(response.message);
-            // Limpia el form
-            $(form)[0].reset();
+
+            var census = {
+                token: response.token,
+                tipo: response.tipo
+            }
+            
+            // El token y el tipo se guardará en una variable llamada census, en el sessionstorage
+            // es algo muy inseguro, si es posible, cambiar a cookies
+            sessionStorage.setItem('census', JSON.stringify(census));
+            
+            //luego se redigirá a la pagina principal
+            //aquí se debería poner un $.get que envíe como parametro el token.
             setTimeout(function() {
-                window.location.href = '/user/login';
-            }, 2000);
+                window.location.href = '/';
+            }, 1000);
         })
         .fail(function(data) {
             // Asegurar que el alert se le quite la clase succes para que solo tenga danger
@@ -55,4 +55,5 @@ $(form).submit(function(event){
             }
         });
     }
-});
+    
+})

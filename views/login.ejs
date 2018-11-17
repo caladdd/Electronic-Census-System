@@ -11,32 +11,40 @@
 <body class="bg-secondary">
     <div class="container">
         <div class="row">
-            <div class="card col-sm-12 col-md-6 col-lg-5 m-auto">                
-                <div class="card-body">
-                    <h1 class="card-title text-center">
-                        Iniciar sesión
-                    </h1>
-                    <p class="text-center">Bienvenido a el sitema de censo online de Bolumbia</p>
-                    <form action="/user/login" method="POST" id="signup">
-                        <div class="form-group">
-                            <label for="email">Usuario</label>
-                            <input type="text" name="email" id="email" placeholder="Usuario" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Contraseña</label>
-                            <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control">
-                        </div>
-                        <div class="text-center">
-                            <p>¿No tienes cuenta aún?</p>
-                            <a href="/user/signup">Registrarse</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submitPersona">Login</button>
-                    </form>        
+            <div class="col-sm-12 col-md-6 col-lg-5 m-auto">
+                <div class="alert" role="alert">
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">
+                            Iniciar sesión
+                        </h1>
+                        <p class="text-center">Bienvenido a el sitema de censo online de Bolumbia</p>
+                        <form action="/user/login" method="POST" id="login">
+                            <div class="form-group">
+                                <label for="email">Usuario</label>
+                                <input type="text" name="email" id="email" placeholder="ej: juanito@ejemplo.com" class="form-control"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Contraseña</label>
+                                <input type="password" name="password" id="password" placeholder="Contraseña" class="form-control"
+                                    required>
+                            </div>
+                            <div class="text-center">
+                                <p>¿No tienes cuenta aún?</p>
+                                <a href="/user/signup">Registrarse</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="submitPersona">Login</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <% include templates/scripts.ejs %>
+    <script src="../scripts/login.js"></script>
 </body>
 
 </html>
