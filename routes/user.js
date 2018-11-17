@@ -120,7 +120,7 @@ router.post('/login',(req, res, next) => {
                 {
                     expiresIn: "1h"
                 });
-                res.setHeader('authorization', 'Bearer '+ token);
+                //res.setHeader('authorization', 'Bearer '+ token);
                 return res.status(200).json({
                     message: "Auth successful",
                     token: token,
