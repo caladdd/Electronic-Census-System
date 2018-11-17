@@ -1,15 +1,184 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= form %></title>
-    <% include templates/head.ejs %>
-  </head>
-  <body>
-    <% include templates/header.ejs %>
-    <h1><%= form %></h1>
-    <p>Welcome to <%= form %></p>
-    <h2>Jajajajaja</h2>
 
-    <% include templates/scripts.ejs %>
+<head>
+  <title>
+    Soporte
+  </title>
+  <% include templates/head.ejs %>
+</head>
+
+<body>
+  <div class="container">
+    <% include templates/header.ejs %>
+    <h1>
+      
+    </h1>
+    <p>
+      Bienvenido al Soporte  
+    </p>
+    <div class="form-group row">
+      <label for="p1" class="col-sm-2 col-form-label">Pregunta</label>
+      <div class="col-sm-10">
+        <p>
+            ¿Hasta cuando hay plazo para llenar el censo
+        </p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="q1" class="col-sm-2 col-form-label">Respuesta</label>
+      <div class="col-sm-10">
+        <p>
+            El censo se cierra una vez llegada la noche del día del censo solo las personas que hayan llenado el formulario en su totalidad quedan censadas en el departamento de estadística, para todas aquellas personas que no lograron realizarlo por este medio lo podrán realizar de la forma tradicional.
+        </p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="p2" class="col-sm-2 col-form-label">Pregunta</label>
+      <div class="col-sm-10">
+        <p>
+            ¿Por qué es importante llenar el censo?
+        </p>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label for="q2" class="col-sm-2 col-form-label">Respuesta</label>
+        <div class="col-sm-10">
+          <p>
+              El censo es la encuesta más amplia y completa se realiza a la república de Bolumbia de modo que en este se obtiene la mayor cantidad de información útil. Esta información es la herramienta más importante que tiene el gobierno de Bolumbia para la planificación de programas para vivienda, salud, educación, entre otros
+          </p>
+        </div>
+      </div>
+      <div class="form-group row">
+          <label for="p3" class="col-sm-2 col-form-label">Pregunta</label>
+          <div class="col-sm-10">
+            <p>
+                ¿Qué pasa si no diligencio el censo a tiempo?
+            </p>
+          </div>
+        </div>
+        <div class="form-group row">
+            <label for="q3" class="col-sm-2 col-form-label">Respuesta</label>
+            <div class="col-sm-10">
+              <p>
+                  En caso tal de que no se alcance a diligenciar el censo en la noche de censo, esos datos se enviaran al departamento de estadística de Bolumbia como datos no confirmados/no terminados y no se tendrán en cuenta para el gobierno por la falta de veracidad al no confirmar estos datos
+              </p>
+            </div>
+          </div>
+          <div class="form-group row">
+              <label for="p4" class="col-sm-2 col-form-label">Pregunta</label>
+              <div class="col-sm-10">
+                <p>
+                    ¿Todas las personas deben llenar el censo?
+                </p>
+              </div>
+            </div>
+            <div class="form-group row">
+                <label for="q4" class="col-sm-2 col-form-label">Respuesta</label>
+                <div class="col-sm-10">
+                  <p>
+                      Con la finalidad de que los datos obtenidos sobre la población sean fieles a la realidad, se espera y desea que todos los integrantes de Bolumbia llenen el censo
+                  </p>
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label for="p5" class="col-sm-2 col-form-label">Pregunta</label>
+                  <div class="col-sm-10">
+                    <p>
+                        ¿El censo se realiza por hogar o por persona?
+                    </p>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label for="q5" class="col-sm-2 col-form-label">Respuesta</label>
+                    <div class="col-sm-10">
+                      <p>
+                          Ya que el censo busca averiguar la condición de vida de todas las personas del país, es importante que cada integrante del hogar realice el censo
+                      </p>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="p6" class="col-sm-2 col-form-label">Pregunta</label>
+                      <div class="col-sm-10">
+                        <p>
+                            ¿Se puede realizar dos o más censos con el mismo correo?
+                        </p>
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="q6" class="col-sm-2 col-form-label">Respuesta</label>
+                        <div class="col-sm-10">
+                          <p>
+                              No, cada integrante debe ingresar al censo con su correo personal, si por alguna razón, los integrantes del hogar no tiene correo, entonces el censador encargado irá al hogar para colaborar con el censo
+                          </p>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                          <label for="p7" class="col-sm-2 col-form-label">Pregunta</label>
+                          <div class="col-sm-10">
+                            <p>
+                                ¿Que pasa si no acabo de llenar el censo antes de la fecha límite?
+                            </p>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="q7" class="col-sm-2 col-form-label">Respuesta</label>
+                            <div class="col-sm-10">
+                              <p>
+                                  Estos datos, también serán enviados al departamento de estadística como datos no confirmados/no terminados y por ende no se tendrán en cuenta para la planeación de gobierno
+                              </p>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                              <label for="p8" class="col-sm-2 col-form-label">Pregunta</label>
+                              <div class="col-sm-10">
+                                <p>
+                                    ¿Los establecimientos privados también se tienen que censar?
+                                </p>
+                              </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="q8" class="col-sm-2 col-form-label">Respuesta</label>
+                                <div class="col-sm-10">
+                                  <p>
+                                      No, solamente establecimientos del gobierno y los hogares
+                                  </p>
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="p9" class="col-sm-2 col-form-label">Pregunta</label>
+                                  <div class="col-sm-10">
+                                    <p>
+                                        ¿Qué hago si no tengo correo?
+                                    </p>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="q9" class="col-sm-2 col-form-label">Respuesta</label>
+                                    <div class="col-sm-10">
+                                      <p>
+                                          Se debe consultar con el censador encargado a su hogar para que este los colabore con el censo
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="form-group row">
+                                      <label for="p10" class="col-sm-2 col-form-label"></label>
+                                      <div class="col-sm-10">
+                                        <p>
+                                            Si su duda no queda resuelta con estas preguntas, comunicarse por los siguientes medios
+                                        </p>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="q10" class="col-sm-2 col-form-label"></label>
+                                        <div class="col-sm-10">
+                                          <p>
+                                          Telefono: 202 43 34 Correo: jcalad@eafit.edu.co 
+                                          </p>
+                                        </div>
+                                      </div>
+
+  </div>
+     <% include templates/scripts.ejs %>
   </body>
 </html>
