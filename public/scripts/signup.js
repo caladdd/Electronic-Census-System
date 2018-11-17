@@ -31,14 +31,19 @@ $(form).submit(function(event){
         })
         .done(function(response) {
             // esta se ejecuta cuando todo sale bien
+            window.scrollTo(0,0);
             $('.alert').removeClass('alert-danger');
             $('.alert').addClass('alert-success');
             $('.alert').text(response.message);
             // Limpia el form
             $(form)[0].reset();
+            setTimeout(function() {
+                window.location.href = '/user/login';
+            }, 2000);
         })
         .fail(function(data) {
             // Asegurar que el alert se le quite la clase succes para que solo tenga danger
+            window.scrollTo(0,0);
             $('.alert').removeClass('alert-success');
             $('.alert').addClass('alert-danger');
         
