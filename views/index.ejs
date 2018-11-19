@@ -4,23 +4,27 @@
     <title><%= title %></title>
     <% include templates/head.ejs %>
   </head>
-  <body>
+  <body class="bg-secondary">
 
       <div class="card-header">
           <ul class="nav nav-tabs card-header-tabs">
             <li class="nav-item">
-              <a class="nav-link active" href="/user/login">Login</a>
+              <a class="nav-link active" href="/user/login">Iniciar sesión</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/user/signup">Signup</a>
+              <a class="nav-link active" href="/user/signup">Registrarse</a>
             </li>
           </ul>
         </div>
 
     <div class="card text-center">
-      <h1><%= title %></h1>
-      <p>Welcome to <%= title %></p>
-  
+      <div class="card-body">
+        <h1>Censo online</h1>
+        <p>Bienvenido al sistem de censo online</p>
+        <p>Para iniciar el censo por favor inicia sesión o crea un nuevo usuario</p>        
+        <a href="/user/login" class="btn btn-primary"> Iniciar sesión</a>
+        <a href="/user/signup" class="btn btn-primary">Registrarse</a>
+      </div>
       <% include templates/scripts.ejs %>
 
     </div>
