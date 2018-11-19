@@ -35,8 +35,8 @@ router.post('/email', function(req, res){
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-            user: email, // generated ethereal user
-            pass: pass // generated ethereal password
+            user: 'electronicECS@gmail.com', // generated ethereal user
+            pass: 'Juan1234e' // generated ethereal password
         }
         //tls:{
          //   rejectUnauthorized:false
@@ -47,8 +47,8 @@ router.post('/email', function(req, res){
     let mailOptions = {
         from: '"Caladdd 👻" <bolumbia@bolumbia.com>', // sender address
         to: 'juanpablo.calad@gmail.com', // list of receivers
-        subject: 'Node', // Subject line
-        text: 'Hello world?', // plain text body
+        subject: 'ECS', // Subject line
+        text: 'ECS', // plain text body
         html: output // html body
     };
 
@@ -60,6 +60,7 @@ router.post('/email', function(req, res){
         console.log('Message sent: %s', info.messageId);
         console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 });
+res.redirect('./email');
 });
 
 module.exports = router;
