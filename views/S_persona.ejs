@@ -93,24 +93,24 @@
           <div class="row">
             <div class="form-group col-sm-12 col-md-6">
               <label for="fpaisnacimiento">País de nacimiento</label>
-              <input type="text" name="fpaisnacimiento" id="fpaisnacimiento" class="form-control" placeholder="País de Nacimiento">
+              <input type="text" name="fpaisnacimiento" id="fpaisnacimiento" value="<%= campos.paisnacimiento%>" class="form-control" placeholder="País de Nacimiento">
             </div>
             <div class="col-sm-12 col-md-6 d-none" id="bloqueExtranjero">
               <div class="form-group">
                 <label for="ftiemporesidencia">¿Cuánto tiempo llevas en Bolumbia?</label>
-                <input type="text" name="ftiemporesidencia" id="ftiemporesidencia" class="form-control" placeholder="Ej: 2 Años">
+                <input type="text" name="ftiemporesidencia" id="ftiemporesidencia" value="<%= campos.tiemporesidencia%>" class="form-control" placeholder="Ej: 2 Años">
               </div>
             </div>
             <div class="form-group col">
               <label for="fciudadnacimiento">Ciudad de nacimiento(seas o no de Bolumbia)</label>
-              <input type="text" name="fciudadnacimiento" id="fciudadnacimiento" class="form-control" placeholder="Ej: Medelumbia">
+              <input type="text" name="fciudadnacimiento" id="fciudadnacimiento" value="<%= campos.ciudadnacimiento%>" class="form-control" placeholder="Ej: Medelumbia">
             </div>
           </div>
           <div class="row">
             <div class="form-group col-sm-12 col-md-6">
               <label for="fniveleducativo">Nivel educativo</label>
               <select name="fniveleducativo" class="custom-select custom-select-lg" id="fniveleducativo">
-                <option selected disabled value="">Escoge tu nivel educativo</option>
+                <option selected disabled value=""><%= campos.niveleducativo%></option>
                 <option value="preescolar">Preescolar</option>
                 <option value="primaria">Primaria</option>
                 <option value="secundaria">Secundaria</option>
@@ -125,7 +125,7 @@
             <div class="form-group col-sm-12 col-md-6">
               <label for="fetnia">Etnía</label>
               <select name="fetnia" id="fetnia" class="custom-select custom-select-lg">
-                <option selected disabled value="">Escoge tu Etnía</option>
+                <option selected disabled value="<%= campos.etnia%>">Escoge tu Etnía</option>
                 <option value="fmestizo">Mestizo</option>
                 <option value="fblanco">Blanco</option>
                 <option value="fafrocolombiano">Afrobolumbiano</option>
@@ -138,12 +138,12 @@
           <div class="row">
             <div class="form-group col-sm-12 col-md-6">
               <label for="freligion">Religión</label>
-              <input type="text" name="freligion" id="freligion" class="form-control" placeholder="Religión">
+              <input type="text" name="freligion" id="freligion" value="<%= campos.religion%>" class="form-control" placeholder="Religión">
             </div>
             <div class="form-group col-sm-12 col-md-6">
               <label for="festadocivil">Estado civil</label>
               <select name="festadocivil" id="festadocivil" class="custom-select">
-                <option selected disabled value="">Seleccione su estado civil</option>
+                <option selected disabled value="<%= campos.estadocivil%>">Seleccione su estado civil</option>
                 <option value="fsoltero">Soltero/a</option>
                 <option value="fcomprometido">Comprometido/a</option>
                 <option value="funionl">Unión libre</option>
@@ -177,11 +177,11 @@
             <div class="row">
               <div class="form-group col-sm-12 col-md-6">
                 <label for="fhorastsemanal">¿Cuántas horas a la semana?</label>
-                <input type="number" name="fhorastsemanal" id="fhorastsemanal" min="0" class="form-control">
+                <input type="number" name="fhorastsemanal" id="fhorastsemanal" value="<%= campos.horastsemanal%>" min="0" class="form-control">
               </div>
               <div class="form-group col-sm-12 col-md-6">
                 <label for="fingresomensual">¿Cuál es su ingreso mensual?</label>
-                <input type="text" name="fingresomensual" id="fingresomensual" placeholder="Ej: 900.000 mensual" class="form-control">
+                <input type="text" name="fingresomensual" id="fingresomensual" value="<%= campos.ingresomensual%>" placeholder="Ej: 900.000 mensual" class="form-control">
               </div>
             </div>
           </fieldset>
