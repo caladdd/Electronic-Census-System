@@ -10,6 +10,7 @@ router.get('/', function(req, res, next) {
   var variable = req.query.valid
   console.log(variable);
   //const fid = 12345678;
+  if(variable){
   const fid = variable;
   User.find({ndocumento: fid})
     .exec()
@@ -33,7 +34,9 @@ router.get('/', function(req, res, next) {
       console.log(err);
       res.status(500).json({error : err});
     });
-  console.log('hi');
+  }else{
+    res.redirect('/');  
+  }
   //res.render('S_persona', { form: 'Sección persona'});
 });
 
