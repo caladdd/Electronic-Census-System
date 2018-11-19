@@ -5,13 +5,13 @@ $(function() {
         var pais = this.value;
         pais = pais.toUpperCase();
         var extranjeroInput = $('#bloqueExtranjero');
-        var tiempoBolumbia = extranjeroInput[0].children[0].children[1];           
+        var tiempoBolumbia = extranjeroInput[0].children[0].children[1];
         if (pais !== 'BOLUMBIA') {
-            extranjeroInput.show();
+            extranjeroInput.removeClass('d-none');
             tiempoBolumbia.setAttribute('required', 'required');
         } else {
-            extranjeroInput.hide();
-            $('#ftiemporesidencia').removeAttr('required')
+            extranjeroInput.addClass('d-none');
+            $('#ftiemporesidencia').removeAttr('required');
         }
     });
   });
