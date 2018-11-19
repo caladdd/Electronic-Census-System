@@ -72,7 +72,7 @@ router.post('/formpersona', function(req, res){
   persona
     .save()
     .then(result => {
-      fid = req.body.fndocumento;
+      fid = req.body.idcensador;
       res.redirect('./?valid=' + fid);
       // console.log(result);
       // res.status(201).json({
@@ -108,7 +108,7 @@ router.post('/:list',(req, res, next)=>{
   }})
   .exec()
   .then(result =>{
-    fid = req.body.fndocumento;
+    fid = id;
     res.redirect('./?valid=' + fid);
     // console.log(result);
     //   res.status(201).json(result);
