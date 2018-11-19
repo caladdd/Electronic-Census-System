@@ -1,17 +1,17 @@
 'use strict'
 
 $(function() {
-    $('#fpaisnacimiento').change(function(){
-        var pais = this.value;
-        pais = pais.toUpperCase();
-        var extranjeroInput = $('#bloqueExtranjero');
-        var tiempoBolumbia = extranjeroInput[0].children[0].children[1];           
-        if (pais !== 'BOLUMBIA') {
-            extranjeroInput.show();
-            tiempoBolumbia.setAttribute('required', 'required');
+    var arriendoRadioB = $('input[name=faduenacion]');
+    arriendoRadioB.change(function(){
+        var tipoArriendo = this.value;
+        var bloqueArrinedo = $('#bloqueArriendo');
+        var pago = bloqueArrinedo[0].children[1]
+        if (tipoArriendo === 'pgarriendo') {
+            bloqueArrinedo.removeClass('d-none');
+            pago.setAttribute('required', 'required');
         } else {
-            extranjeroInput.hide();
-            $('#ftiemporesidencia').removeAttr('required')
+            bloqueArrinedo.addClass('d-none');
+            $(pago).removeAttr('required');
         }
-    });
-  });
+    })
+});

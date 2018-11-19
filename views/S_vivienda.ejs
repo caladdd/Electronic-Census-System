@@ -85,9 +85,8 @@
           </div>
           <div class="row">
           </div>
-          <p>Si pagan arriendo</p>
-          <div class="form-group">
-            <label for="fpagoarriendo">¿Cuánto paga?</label>
+          <div class="form-group d-none" id="bloqueArriendo">
+            <label for="fpagoarriendo">¿Cuánto paga de arriendo?</label>
             <input type="text" name="fpagoarriendo" id="fpagoarriendo" placeholder="Ej: 900.000 mensual" class="form-control">
           </div>
           <p>De los siguientes servicios. ¿Cuales posee su vivienda?</p>
@@ -120,7 +119,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="form-group col-sm-12 col-md-6">
+            <div class="form-group col-sm-12">
               <label for="fnpersonasapoyoec">¿Cuántas personas con las que vive apoyan económicamente al hogar?</label>
               <input type="number" name="fnpersonasapoyoec" min="0" class="form-control" required>
             </div>
@@ -131,7 +130,7 @@
     </div>
   </div>
   <% include templates/scripts.ejs %>
-  <script src="scripts/persona.js"></script>
+  <script src="scripts/vivienda.js"></script>
 </body>
 
 </html>
