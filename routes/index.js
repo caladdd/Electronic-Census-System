@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/ccesion', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.redirect('/');  
 });
 
 module.exports = router;
