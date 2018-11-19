@@ -7,10 +7,10 @@ const User = require('../models/user');
 
 /* GET persona page. */
 router.get('/', function(req, res, next) {
-
   var variable = req.query.valid
   console.log(variable);
-  const fid = 12345678;
+  //const fid = 12345678;
+  const fid = variable;
   User.find({ndocumento: fid})
     .exec()
     .then(doc => {
@@ -38,10 +38,10 @@ router.get('/', function(req, res, next) {
 });
 
 /** GET formulario persona */
-// router.get('/:list', function(req, res){
-//   const fid = req.params.list;
-//   res.redirect('./?valid=' + fid);
-// });
+router.get('/:list', function(req, res){
+  const fid = req.params.list;
+  res.redirect('./?valid=' + fid);
+});
 
 /** POST formulario persona */
 router.post('/formpersona', function(req, res){
@@ -69,11 +69,13 @@ router.post('/formpersona', function(req, res){
   persona
     .save()
     .then(result => {
-      console.log(result);
-      res.status(201).json({
-        message: "Post /formpersona",
-        createPersona: result
-      });
+      fid = req.body.fndocumento;
+      res.redirect('./?valid=' + fid);
+      // console.log(result);
+      // res.status(201).json({
+      //   message: "Post /formpersona",
+      //   createPersona: result
+      // });
     })
     .catch(err => {
       console.log(err)
@@ -103,8 +105,10 @@ router.post('/:list',(req, res, next)=>{
   }})
   .exec()
   .then(result =>{
-    console.log(result);
-      res.status(201).json(result);
+    fid = req.body.fndocumento;
+    res.redirect('./?valid=' + fid);
+    // console.log(result);
+    //   res.status(201).json(result);
   })
   .catch(err => {
       console.log(err)

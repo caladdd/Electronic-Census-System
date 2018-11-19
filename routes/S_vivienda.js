@@ -25,11 +25,12 @@ router.post('/formvivienda', function(req, res){
   vivienda
     .save()
     .then(result => {
-      console.log(result);
-      res.status(201).json({
-        message: "Post /formvivienda",
-        createVivienda: result
-      });
+      res.redirect('./');
+      // console.log(result);
+      // res.status(201).json({
+      //   message: "Post /formvivienda",
+      //   createVivienda: result
+      // });
     })
     .catch(err => {
       console.log(err)

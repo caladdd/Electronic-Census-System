@@ -123,6 +123,7 @@ router.post('/login',(req, res, next) => {
                 //res.setHeader('authorization', 'Bearer '+ token);
                 return res.status(200).json({
                     message: "Auth successful",
+                    id: user[0].ndocumento,
                     token: token,
                     tipo: user[0].tipo
                   });

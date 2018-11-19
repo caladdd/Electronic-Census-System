@@ -38,7 +38,7 @@ $(form).submit(function(event) {
             //luego se redigirá a la pagina principal
             //aquí se debería poner un $.get que envíe como parametro el token.
             setTimeout(function() {
-                window.location.href = '/';
+                window.location.href = '/S_persona/'+response.id;
             }, 1000);
         })
         .fail(function(data) {
