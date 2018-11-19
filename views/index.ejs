@@ -5,10 +5,13 @@
     <% include templates/head.ejs %>
   </head>
   <body>
-    <% include templates/header.ejs %>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="card text-center">
+      <% include templates/header.ejs %>
+      <h1><%= title %></h1>
+      <p>Welcome to <%= title %></p>
+  
+      <% include templates/scripts.ejs %>
 
-    <% include templates/scripts.ejs %>
+    </div>
   </body>
 </html>
